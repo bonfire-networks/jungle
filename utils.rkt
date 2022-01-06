@@ -43,7 +43,7 @@
     [(list) ""]
     [(list p) (to-string p)]
     [else (~>> (map to-string pieces)
-               (apply string-append-immutable))]))
+               (apply string-append))]))
  
 ;; sugar around with-input-from-string to avoid the lambda
 (define-syntax string-input
