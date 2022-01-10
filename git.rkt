@@ -24,7 +24,7 @@
 
 (define (fetch path . args)
   (string-output
-   (apply git '-C path 'fetch args)))
+   (apply git '-C path 'fetch '--prune args)))
 
 (define change%
   (class object%
