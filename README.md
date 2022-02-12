@@ -6,7 +6,7 @@ Bonfire's forthcoming build tool.
 
 1. Install racket through your regular package management
 2. Clone this repository to a relatively permanent home (pulling git will update it!)
-3. Run `raco pkg install` in this directory
+3. Run `raco pkg install --auto` in this directory
 
 To set your shell up to use it, there are two options. You only need to do one.
 
@@ -27,6 +27,12 @@ racket $HOME/code/bonfire/jungle/main.rkt $@
 ```
 
 Make it executable with `chmod u+x jungle`
+
+## Upgrading
+
+1. `cd` into the repo's directory
+2. `git pull` to fetch the latest version
+3. Run `raco pkg install --auto` again
 
 ### Command reference
 
