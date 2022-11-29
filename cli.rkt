@@ -32,14 +32,14 @@
 ;;   * attach current terminal
 
 (define (is-fork? dir)
-;  "Given a path to the root of a repository, checks if it sits within a `forks` directory."
-  (eqv? "forks" (basename (simplify-path (build-path dir 'up)))))
+;  "Given a path to the root of a repository, checks if it sits within a forks directory."
+  (eqv? "apps" (basename (simplify-path (build-path dir 'up)))))
 
 (define (find-forks-dir)
   (some~>
    (find-project-root)
    (send get-path-string)
-   (build-path "forks")))
+   (build-path "apps")))
 
 (define (find-project-root)
 ;  "Assuming a standard bonfire repository layout, resolves to the root of the project repo."
@@ -290,9 +290,9 @@
 
 
 ;; (define (pre-run)
-;;   (for ([d '["forks" "data/uploads" "priv/static/data"]])
+;;   (for ([d '["forks" "apps" "data/uploads" "priv/static/data"]])
 ;;     (make-directory* d))
-;;   ;; (make-directory "forks")
+;;   ;; (make-directory "apps")
 ;;   ;; (make-direct
 ;;   )
 
