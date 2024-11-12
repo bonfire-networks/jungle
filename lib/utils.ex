@@ -27,7 +27,7 @@ defmodule Jungle.Utils do
         if exit_code == 0 do
           if output == "", do: :ok, else: {:ok, output}
         else
-          if log_errors?, do: IO.warn(output)
+          if log_errors?, do: IO.warn("error running `#{command} #{inspect(args)}`: #{output}")
 
           {:error, output}
         end

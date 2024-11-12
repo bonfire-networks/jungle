@@ -46,6 +46,12 @@ defmodule Jungle.Git do
     end
   end
 
+  def clone(repo, opts) do
+    if branch = opts[:branch],
+      do: run_command(["clone", "-b", branch, repo, opts[:path]]),
+      else: run_command(["clone", repo, opts[:path]])
+  end
+
   @doc """
   Returns the current branch of the repository at the given path.
   """
